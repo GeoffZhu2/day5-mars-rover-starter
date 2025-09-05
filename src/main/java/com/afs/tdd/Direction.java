@@ -1,5 +1,8 @@
 package com.afs.tdd;
 
 public enum Direction {
-    N
+    N,
+    S,
+    W,
+    E
 }

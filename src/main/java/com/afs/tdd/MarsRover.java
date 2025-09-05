@@ -2,12 +2,30 @@ package com.afs.tdd;
 
 public class MarsRover {
     private Location location;
+
     public MarsRover(Location location) {
         this.location = location;
     }
 
     public void executeCommand(Command command) {
+        if (command == Command.M) {
+            move();
+        }
+    }
 
+    private void move() {
+        if(this.location.getDirection() == Direction.N) {
+            location.setLocationY(location.getLocationY() + 1);
+        }
+        if(this.location.getDirection() == Direction.S) {
+            location.setLocationY(location.getLocationY() - 1);
+        }
+        if(this.location.getDirection() == Direction.E) {
+            location.setLocationX(location.getLocationX() + 1);
+        }
+        if(this.location.getDirection() == Direction.W) {
+            location.setLocationX(location.getLocationX() - 1);
+        }
     }
 
     public Location getLocation() {

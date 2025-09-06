@@ -17,6 +17,13 @@ public class MarsRover {
         if (command == Command.L) {
             turnLeft();
         }
+        if (command == Command.R) {
+            turnRight();
+        }
+    }
+
+    private void turnRight() {
+        location.setDirection(location.getDirection().turnRight());
     }
 
     private void turnLeft() {

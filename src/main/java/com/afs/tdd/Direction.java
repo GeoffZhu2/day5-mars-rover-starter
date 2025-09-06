@@ -10,4 +10,13 @@ public enum Direction {
             case W -> S;
         };
     }
+
+    public Direction turnRight() {
+        return switch (this) {
+            case N -> E;
+            case S -> W;
+            case E -> S;
+            case W -> N;
+        };
+    }
 }

@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Objects;
+
 public class Location {
     private int locationX;
     private int locationY;
@@ -10,6 +12,26 @@ public class Location {
         this.locationY = locationY;
         this.direction = direction;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Location location = (Location) o;
+        return locationX == location.locationX &&
+                locationY == location.locationY &&
+                direction == location.direction;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(locationX, locationY, direction);
+    }
+
 
     public int getLocationX() {
         return locationX;

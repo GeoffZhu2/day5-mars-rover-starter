@@ -14,9 +14,7 @@ class DemoTest {
         marsRover.executeCommand(Command.M);
         // Then
         Location expectedLocation = new Location(0, 1, Direction.N);
-        assertEquals(expectedLocation.getLocationX(), marsRover.getLocation().getLocationX());
-        assertEquals(expectedLocation.getLocationY(), marsRover.getLocation().getLocationY());
-        assertEquals(expectedLocation.getDirection(), marsRover.getLocation().getDirection());
+        assertEquals(location, expectedLocation);
     }
 
     @Test
@@ -28,9 +26,7 @@ class DemoTest {
         marsRover.executeCommand(Command.M);
         // Then
         Location expectedLocation = new Location(0, -1, Direction.S);
-        assertEquals(expectedLocation.getLocationX(), marsRover.getLocation().getLocationX());
-        assertEquals(expectedLocation.getLocationY(), marsRover.getLocation().getLocationY());
-        assertEquals(expectedLocation.getDirection(), marsRover.getLocation().getDirection());
+        assertEquals(location, expectedLocation);
     }
 
     @Test
@@ -42,9 +38,7 @@ class DemoTest {
         marsRover.executeCommand(Command.M);
         // Then
         Location expectedLocation = new Location(1, 0, Direction.E);
-        assertEquals(expectedLocation.getLocationX(), marsRover.getLocation().getLocationX());
-        assertEquals(expectedLocation.getLocationY(), marsRover.getLocation().getLocationY());
-        assertEquals(expectedLocation.getDirection(), marsRover.getLocation().getDirection());
+        assertEquals(location, expectedLocation);
     }
 
     @Test
@@ -56,8 +50,6 @@ class DemoTest {
         marsRover.executeCommand(Command.M);
         // Then
         Location expectedLocation = new Location(-1, 0, Direction.W);
-        assertEquals(expectedLocation.getLocationX(), marsRover.getLocation().getLocationX());
-        assertEquals(expectedLocation.getLocationY(), marsRover.getLocation().getLocationY());
-        assertEquals(expectedLocation.getDirection(), marsRover.getLocation().getDirection());
+        assertEquals(location, expectedLocation);
     }
 }

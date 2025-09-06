@@ -1,5 +1,8 @@
 package com.afs.tdd;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MarsRover {
     private Location location;
 
@@ -11,19 +14,26 @@ public class MarsRover {
         if (command == Command.M) {
             move();
         }
+        if (command == Command.L) {
+            turnLeft();
+        }
+    }
+
+    private void turnLeft() {
+        location.setDirection(location.getDirection().turnLeft());
     }
 
     private void move() {
-        if(this.location.getDirection() == Direction.N) {
+        if (this.location.getDirection() == Direction.N) {
             location.setLocationY(location.getLocationY() + 1);
         }
-        if(this.location.getDirection() == Direction.S) {
+        if (this.location.getDirection() == Direction.S) {
             location.setLocationY(location.getLocationY() - 1);
         }
-        if(this.location.getDirection() == Direction.E) {
+        if (this.location.getDirection() == Direction.E) {
             location.setLocationX(location.getLocationX() + 1);
         }
-        if(this.location.getDirection() == Direction.W) {
+        if (this.location.getDirection() == Direction.W) {
             location.setLocationX(location.getLocationX() - 1);
         }
     }

@@ -37,32 +37,20 @@ public class MarsRover {
     }
 
     private void moveForward() {
-        if (this.location.getDirection() == Direction.N) {
-            location.setLocationY(location.getLocationY() + 1);
-        }
-        if (this.location.getDirection() == Direction.S) {
-            location.setLocationY(location.getLocationY() - 1);
-        }
-        if (this.location.getDirection() == Direction.E) {
-            location.setLocationX(location.getLocationX() + 1);
-        }
-        if (this.location.getDirection() == Direction.W) {
-            location.setLocationX(location.getLocationX() - 1);
+        switch (location.getDirection()) {
+            case N -> location.setLocationY(location.getLocationY() + 1);
+            case S -> location.setLocationY(location.getLocationY() - 1);
+            case E -> location.setLocationX(location.getLocationX() + 1);
+            case W -> location.setLocationX(location.getLocationX() - 1);
         }
     }
 
     private void moveBackward() {
-        if (this.location.getDirection() == Direction.N) {
-            location.setLocationY(location.getLocationY() - 1);
-        }
-        if (this.location.getDirection() == Direction.S) {
-            location.setLocationY(location.getLocationY() + 1);
-        }
-        if (this.location.getDirection() == Direction.E) {
-            location.setLocationX(location.getLocationX() - 1);
-        }
-        if (this.location.getDirection() == Direction.W) {
-            location.setLocationX(location.getLocationX() + 1);
+        switch (location.getDirection()) {
+            case N -> location.setLocationY(location.getLocationY() - 1);
+            case S -> location.setLocationY(location.getLocationY() + 1);
+            case E -> location.setLocationX(location.getLocationX() - 1);
+            case W -> location.setLocationX(location.getLocationX() + 1);
         }
     }
 

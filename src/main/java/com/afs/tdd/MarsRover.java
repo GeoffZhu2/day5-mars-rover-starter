@@ -12,7 +12,10 @@ public class MarsRover {
 
     public void executeCommand(Command command) {
         if (command == Command.M) {
-            move();
+            moveForward();
+        }
+        if(command == Command.B) {
+            moveBackward();
         }
         if (command == Command.L) {
             turnLeft();
@@ -30,7 +33,7 @@ public class MarsRover {
         location.setDirection(location.getDirection().turnLeft());
     }
 
-    private void move() {
+    private void moveForward() {
         if (this.location.getDirection() == Direction.N) {
             location.setLocationY(location.getLocationY() + 1);
         }
@@ -42,6 +45,21 @@ public class MarsRover {
         }
         if (this.location.getDirection() == Direction.W) {
             location.setLocationX(location.getLocationX() - 1);
+        }
+    }
+
+    private void moveBackward() {
+        if (this.location.getDirection() == Direction.N) {
+            location.setLocationY(location.getLocationY() - 1);
+        }
+        if (this.location.getDirection() == Direction.S) {
+            location.setLocationY(location.getLocationY() + 1);
+        }
+        if (this.location.getDirection() == Direction.E) {
+            location.setLocationX(location.getLocationX() - 1);
+        }
+        if (this.location.getDirection() == Direction.W) {
+            location.setLocationX(location.getLocationX() + 1);
         }
     }
 

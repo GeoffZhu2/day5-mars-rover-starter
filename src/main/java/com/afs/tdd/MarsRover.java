@@ -1,8 +1,8 @@
 package com.afs.tdd;
 
 public class MarsRover {
+    private static final String VALID_COMMANDS_PATTERN = "[MBLR]*";
     private Location location;
-
     public MarsRover(Location location) {
         this.location = location;
     }
@@ -11,7 +11,7 @@ public class MarsRover {
         if (commands == null || commands.isEmpty()) {
             return;
         }
-        if (!commands.matches("[MBLR]*")) {
+        if (!commands.matches(VALID_COMMANDS_PATTERN)) {
             throw new RuntimeException("Error Command: " + commands);
         }
         for (char command: commands.toCharArray()) {
@@ -20,17 +20,11 @@ public class MarsRover {
     }
 
     private void executeSingleCommand(char command) {
-        if (command == 'M') {
-            moveForward();
-        }
-        if(command == 'B') {
-            moveBackward();
-        }
-        if (command == 'L') {
-            turnLeft();
-        }
-        if (command == 'R') {
-            turnRight();
+        switch (command) {
+            case 'M' -> moveForward();
+            case 'B' -> moveBackward();
+            case 'L' -> turnLeft();
+            case 'R' -> turnRight();
         }
     }
 

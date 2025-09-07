@@ -1,8 +1,5 @@
 package com.afs.tdd;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class MarsRover {
     private Location location;
 
@@ -10,17 +7,17 @@ public class MarsRover {
         this.location = location;
     }
 
-    public void executeCommand(Command command) {
-        if (command == Command.M) {
+    public void executeCommand(String command) {
+        if ("M".equals(command)) {
             moveForward();
         }
-        if(command == Command.B) {
+        if("B".equals(command)) {
             moveBackward();
         }
-        if (command == Command.L) {
+        if ("L".equals(command)) {
             turnLeft();
         }
-        if (command == Command.R) {
+        if ("R".equals(command)) {
             turnRight();
         }
     }

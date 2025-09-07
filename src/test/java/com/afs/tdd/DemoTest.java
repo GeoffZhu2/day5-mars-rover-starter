@@ -11,7 +11,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.N);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.M);
+        marsRover.executeCommand("M");
         // Then
         Location expectedLocation = new Location(0, 1, Direction.N);
         assertEquals(location, expectedLocation);
@@ -23,7 +23,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.S);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.M);
+        marsRover.executeCommand("M");
         // Then
         Location expectedLocation = new Location(0, -1, Direction.S);
         assertEquals(location, expectedLocation);
@@ -35,7 +35,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.E);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.M);
+        marsRover.executeCommand("M");
         // Then
         Location expectedLocation = new Location(1, 0, Direction.E);
         assertEquals(location, expectedLocation);
@@ -47,7 +47,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.W);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.M);
+        marsRover.executeCommand("M");
         // Then
         Location expectedLocation = new Location(-1, 0, Direction.W);
         assertEquals(location, expectedLocation);
@@ -59,7 +59,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.N);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.L);
+        marsRover.executeCommand("L");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.W);
         assertEquals(location, expectedLocation);
@@ -71,7 +71,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.S);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.L);
+        marsRover.executeCommand("L");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.E);
         assertEquals(location, expectedLocation);
@@ -83,7 +83,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.E);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.L);
+        marsRover.executeCommand("L");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.N);
         assertEquals(location, expectedLocation);
@@ -95,7 +95,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.W);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.L);
+        marsRover.executeCommand("L");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.S);
         assertEquals(location, expectedLocation);
@@ -107,7 +107,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.N);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.R);
+        marsRover.executeCommand("R");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.E);
         assertEquals(location, expectedLocation);
@@ -119,7 +119,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.S);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.R);
+        marsRover.executeCommand("R");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.W);
         assertEquals(location, expectedLocation);
@@ -131,7 +131,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.E);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.R);
+        marsRover.executeCommand("R");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.S);
         assertEquals(location, expectedLocation);
@@ -143,7 +143,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.W);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.R);
+        marsRover.executeCommand("R");
         // Then
         Location expectedLocation = new Location(0, 0, Direction.N);
         assertEquals(location, expectedLocation);
@@ -155,7 +155,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.N);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.B);
+        marsRover.executeCommand("B");
         // Then
         Location expectedLocation = new Location(0, -1, Direction.N);
         assertEquals(location, expectedLocation);
@@ -167,7 +167,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.S);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.B);
+        marsRover.executeCommand("B");
         // Then
         Location expectedLocation = new Location(0, 1, Direction.S);
         assertEquals(location, expectedLocation);
@@ -179,7 +179,7 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.E);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.B);
+        marsRover.executeCommand("B");
         // Then
         Location expectedLocation = new Location(-1, 0, Direction.E);
         assertEquals(location, expectedLocation);
@@ -191,10 +191,22 @@ class DemoTest {
         Location location = new Location(0, 0, Direction.W);
         MarsRover marsRover = new MarsRover(location);
         // When
-        marsRover.executeCommand(Command.B);
+        marsRover.executeCommand("B");
         // Then
         Location expectedLocation = new Location(1, 0, Direction.W);
         assertEquals(location, expectedLocation);
     }
+
+//    @Test
+//    void should_executes_the_complete_batch_of_commands() {
+//        // Given
+//        Location location = new Location(0, 0, Direction.W);
+//        MarsRover marsRover = new MarsRover(location);
+//        // When
+//        marsRover.executeCommand("B");
+//        // Then
+//        Location expectedLocation = new Location(1, 0, Direction.W);
+//        assertEquals(location, expectedLocation);
+//    }
 
 }

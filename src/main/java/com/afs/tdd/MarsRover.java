@@ -7,17 +7,29 @@ public class MarsRover {
         this.location = location;
     }
 
-    public void executeCommand(String command) {
-        if ("M".equals(command)) {
+    public void executeCommands(String commands) {
+        if (commands == null || commands.isEmpty()) {
+            return;
+        }
+        if (!commands.matches("[MBLR]*")) {
+            throw new RuntimeException("Error Command: " + commands);
+        }
+        for (char command: commands.toCharArray()) {
+            executeSingleCommand(command);
+        }
+    }
+
+    private void executeSingleCommand(char command) {
+        if (command == 'M') {
             moveForward();
         }
-        if("B".equals(command)) {
+        if(command == 'B') {
             moveBackward();
         }
-        if ("L".equals(command)) {
+        if (command == 'L') {
             turnLeft();
         }
-        if ("R".equals(command)) {
+        if (command == 'R') {
             turnRight();
         }
     }
